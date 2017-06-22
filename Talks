@@ -1,0 +1,130 @@
+<!DOCTYPE Html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+
+<title>ARL Near Miss Management</title>
+
+<link href="Style/google.css" rel="stylesheet" type="text/css">
+<link href="Style/meah.css" rel="stylesheet" type="text/css">
+<!--<link href="Style/w3.css" rel="stylesheet" type="text/css"> -->
+<script src="Jscript/pen.js" type= "text/javascript" ></script>
+</head>
+
+<div id= "wrapper">
+<header>
+  <div class="card">
+  <div class="header">
+    <h1><img src="./img/adamus.jpg" height="100px" width= "200px"> <br> ARL Near Miss Management Platform </h1>
+  </div>
+  <div class="container">
+    <p>Project Proudly Powered by LixWeb - University of Energy and Natural Resources | Sunyani</p>
+  </div>
+</div>
+</header>
+</div>
+
+<style style="text/css">
+body {
+  background-image: url("./img/mr.jpg");
+  background-position: 10% 10% ;
+  background-repeat: repeat;
+}
+</style>
+
+<body>
+
+<div id="wrapper">
+
+  <h2>Health, Safety & Environment Department</h2>
+  <h3>Occupational Health and Safety Unit</h3>
+  <hr>
+  <p>This name generator will take three(3) words/names from the wordbank to output</p>
+  <br>
+  
+  <form>
+  <div class="form-group">
+    <label class="button button6" >ARL Names bank Reversed</label>
+    <textarea id="wordbank" cols="20" rows="30" placeholder="Type in the names per line."></textarea><br>
+    <button type="button" class="button button1">Randomize 3 Names</button> 
+	</div>
+  </form> 
+  
+  
+  <footer class="card">
+  <div class="footer">
+			
+					<div class="site-info">
+						Proudly powered by <a href="Ernest Original " rel="nofollow">LixWeb</a><span class="sep"> &nbsp;|&nbsp; </span>&copy; 2017 &nbsp;|&nbsp; 
+				</div>
+		</div>
+	</footer>
+  
+
+  <ul id="names"></ul><br>
+  
+</div>
+
+<script>
+var index,
+    prevIndex,
+    s,
+    words;
+
+$('button').click(function() {
+  
+  // Store all the words in an array.
+  words = $('#wordbank').val().split('\n');
+  
+  if (words.length == 0) {
+  
+    // Remove all child nodes from the <ul>
+    $('#names').empty();
+
+    // Create name ideas by combining two random words
+    for (var i = 0; i < 3; i++) {
+      $('#names').append("<li>" +
+                     randomName(words) +
+                    "</li>");
+    }
+    
+  } else {
+    alert("You need enter names first for this to work.");
+  }
+  
+});
+
+function randomWord(wordbank) {
+  // Avoid duplicate names
+  while (prevIndex == index)
+    index = Math.round(Math.random() * (wordbank.length - 1));
+  
+  prevIndex = index;
+  return wordbank[index];
+}
+
+function randomName(wordbank) {
+  // Sometimes an "s" will be added to the end of the name.
+  s = Math.round(Math.random() * 1) 
+  return randomWord(wordbank)
+}
+
+
+
+
+</script>
+
+ </body>
+
+
+
+</html>
+
+<!--
+ <footer>
+ <p>©2017 My Company. All rights reserved.</p> 
+</footer>
+-->
